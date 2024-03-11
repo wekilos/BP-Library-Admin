@@ -51,12 +51,11 @@ const WelayatlarUpdate = () => {
   const updateGroup = () => {
     setLoading(true);
     const formData = new FormData();
-    if (file?.size) {
-      formData.append("file", file);
-    }
+
+    formData.append("file", file);
 
     axiosInstance
-      .patch("/api/item/upload/" + itemId, formData)
+      .post("/api/item/upload/" + itemId, formData)
       .then((data) => {
         setLoading(false);
         console.log(data.data);
