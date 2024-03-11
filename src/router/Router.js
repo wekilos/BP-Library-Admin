@@ -8,6 +8,7 @@ import {
   CategoryItem,
   CategoryItemCreate,
   CategoryItemUpdate,
+  CategoryItemUpload,
   CategoryUpdate,
   Home,
   Login,
@@ -60,6 +61,12 @@ const App = () => {
               restricted={true}
               component={CategoryItemUpdate}
               path="/category/:id/update/:itemId"
+              exact
+            />
+            <PrivateRoute
+              restricted={true}
+              component={CategoryItemUpload}
+              path="/category/:id/upload/:itemId"
               exact
             />
 

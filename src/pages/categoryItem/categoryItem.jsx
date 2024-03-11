@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Button from "@mui/joy/Button";
 import Modal from "@mui/joy/Modal";
 import Sheet from "@mui/joy/Sheet";
-import { Add, Edit, Delete } from "@mui/icons-material";
+import { Add, Edit, Delete, Image } from "@mui/icons-material";
 import { BASE_URL, axiosInstance } from "../../utils/axiosIntance";
 import { useHistory, useParams } from "react-router-dom";
 import Pagination from "../../components/pagination";
@@ -226,7 +226,15 @@ const CategoryItem = () => {
               <h1 className="text-[14px] font-[500] text-black w-[20%] min-w-[200px] whitespace-nowrap uppercase">
                 {item?.year}
               </h1>
-              <h1 className="text-[14px] font-[500] gap-6 text-center text-black w-[15%]   whitespace-nowrap uppercase">
+              <h1 className="text-[14px] font-[500] flex gap-3 justify-center text-center text-black w-[15%]   whitespace-nowrap uppercase">
+                <Image
+                  onClick={() =>
+                    history.push({
+                      pathname: "/category/" + id + "/upload/" + item?.id,
+                    })
+                  }
+                  className="text-blue cursor-pointer"
+                />
                 <Edit
                   onClick={() =>
                     history.push({

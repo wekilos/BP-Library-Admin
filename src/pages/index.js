@@ -15,3 +15,6 @@ export const CategoryItemCreate = lazy(() =>
 export const CategoryItemUpdate = lazy(() =>
   import("./categoryItem/categoryItemUpdate")
 );
+export const CategoryItemUpload = lazy(() =>
+  import("./categoryItem/categoryItemUpload")
+);
